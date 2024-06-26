@@ -1,0 +1,26 @@
+{
+	"name": "actions",
+	"description": " Custom actions for GitHub workflows",
+	"author": "Userscriptsup",
+	"license": "ISC",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"scripts": {
+		"lint": "eslint . && prettier --check .",
+		"lint-fix": "eslint --fix . && prettier --write ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/userscriptsup/actions.git"
+	},
+	"bugs": {
+		"url": "https://github.com/userscriptsup/actions/issues"
+	},
+	"homepage": "https://github.com/userscriptsup/actions#readme",
+	"devDependencies": {
+		"eslint": "^9.5.0",
+		"eslint-config-prettier": "^9.1.0",
+		"prettier": "^3.3.2"
+	}
+}
