@@ -12,10 +12,11 @@ if (input) {
 } else {
 	Core.setFailed("Missing semver input, and the ref type is not tag.");
 	process.exit(1);
+	// v = "v1.0.0-beta.1"; // DEBUG
 }
 
 const semver = Semver.parse(v);
-// console.debug(semver);
+// console.debug(semver); // DEBUG
 
 if (semver) {
 	Core.setOutput("semver", semver.version);
@@ -25,6 +26,8 @@ if (semver) {
 	Core.setOutput("patch", semver.patch);
 	Core.setOutput("prerelease", semver.prerelease.join("."));
 	Core.setOutput("build", semver.build.join("."));
+	Core.setOutput("alpha", semver.prerelease.includes("alpha"));
+	Core.setOutput("beta", semver.prerelease.includes("beta"));
 } else {
 	Core.setFailed(`Parsing failed: ${v}`);
 }

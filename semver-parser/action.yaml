@@ -26,6 +26,10 @@ outputs:
     description: "<pre-release> ::= <dot-separated pre-release identifiers>"
   build:
     description: "<build> ::= <dot-separated build identifiers>"
+  alpha:
+    description: "A boolean value indicating whether the pre-release identifiers contain an alpha string"
+  beta:
+    description: "A boolean value indicating whether the pre-release identifiers contain an beta string"
 runs:
   using: node20
   main: dist/index.js
