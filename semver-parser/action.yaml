@@ -1,0 +1,31 @@
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions
+
+name: semver-parser
+description: Parse a SemVer string or Tag Ref
+author: Userscriptsup
+
+inputs:
+  input:
+    description: version string to be parsed
+    required: false
+    trimWhitespace: true
+
+# https://semver.org/
+outputs:
+  semver:
+    description: '<valid semver> ::= <version core> | <version core> "-" <pre-release> | <version core> "+" <build> | <version core> "-" <pre-release> "+" <build>'
+  core:
+    description: '<version core> ::= <major> "." <minor> "." <patch>'
+  major:
+    description: "<major> ::= <numeric identifier>"
+  minor:
+    description: "<minor> ::= <numeric identifier>"
+  patch:
+    description: "<patch> ::= <numeric identifier>"
+  prerelease:
+    description: "<pre-release> ::= <dot-separated pre-release identifiers>"
+  build:
+    description: "<build> ::= <dot-separated build identifiers>"
+runs:
+  using: node20
+  main: dist/index.js
